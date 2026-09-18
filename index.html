@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VDL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink&family=Luxurious+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="header__inner">
+    <a href="/" class="header__logo" aria-label="VDL 홈으로 이동">
+      <img src="img/vdl logo.svg" alt="VDL">
+    </a>
+
+    <nav class="header__nav" aria-label="주요 메뉴">
+      <ul>
+        <li><a href="#">NEW</a></li>
+        <li><a href="#">BEST</a></li>
+        <li class="has-dropdown">
+          <a href="#">SHOP</a>
+          <div class="dropdown">
+            <ul class="dropdown__list">
+              <li><a href="#">BASE</a></li>
+              <li><a href="#">EYE</a></li>
+              <li><a href="#">LIP</a></li>
+              <li><a href="#">SKINCARE</a></li>
+              <li><a href="#">TOOLS</a></li>
+            </ul>
+            <div class="dropdown__visual"></div>
+          </div>
+        </li>
+        <li><a href="#">COLLECTION</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li class="has-dropdown">
+          <a href="#">STOCKIST</a>
+          <div class="dropdown">
+            <ul class="dropdown__list">
+              <li><a href="#">ONLINE STORE</a></li>
+              <li><a href="#">OFFLINE STORE</a></li>
+            </ul>
+            <div class="dropdown__visual"></div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header__utils">
+      <button type="button" id="searchTrigger" class="icon-btn" aria-label="검색" aria-expanded="false" aria-controls="searchOverlay">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.4"/><line x1="21" y1="21" x2="16.2" y2="16.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </button>
+      <button type="button" class="icon-btn" aria-label="마이페이지">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.4"/><path d="M4 20c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </button>
+      <button type="button" class="icon-btn" aria-label="위시리스트">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 20.2s-7.6-4.6-9.9-9.1C.5 7.7 2 4.3 5.4 3.6c2-.4 4 .5 5.1 2.3C11.6 4.1 13.6 3.2 15.6 3.6c3.4.7 4.9 4.1 3.3 7.5C16.6 15.6 12 20.2 12 20.2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </button>
+      <button type="button" class="icon-btn" aria-label="장바구니">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M7 9h10l1 10.5a1.2 1.2 0 0 1-1.2 1.3H7.2A1.2 1.2 0 0 1 6 19.5L7 9z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 9V7.5a3 3 0 1 1 6 0V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <button type="button" class="header__menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav id="mobileNav" class="mobile-nav" aria-label="모바일 메뉴">
+    <ul>
+      <li><a href="#">NEW</a></li>
+      <li><a href="#">BEST</a></li>
+      <li class="has-dropdown">
+        <a href="#">SHOP</a>
+        <ul class="dropdown">
+          <li><a href="#">BASE</a></li>
+          <li><a href="#">EYE</a></li>
+          <li><a href="#">LIP</a></li>
+          <li><a href="#">SKINCARE</a></li>
+          <li><a href="#">TOOLS</a></li>
+        </ul>
+      </li>
+      <li><a href="#">COLLECTION</a></li>
+      <li><a href="#">ABOUT</a></li>
+      <li class="has-dropdown">
+        <a href="#">STOCKIST</a>
+        <ul class="dropdown">
+          <li><a href="#">ONLINE STORE</a></li>
+          <li><a href="#">OFFLINE STORE</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <div id="searchOverlay" class="search-overlay" aria-hidden="true">
+    <div class="search-overlay__inner">
+      <form class="search-overlay__form" role="search">
+        <svg class="search-overlay__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.4"/><line x1="21" y1="21" x2="16.2" y2="16.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <input type="text" class="search-overlay__input" placeholder="검색어를 입력하세요" autocomplete="off" aria-label="검색어 입력">
+        <button type="button" class="search-overlay__close" aria-label="검색창 닫기">
+          <svg viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </button>
+      </form>
+      <ul class="search-overlay__results"></ul>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero__slides">
+    <a href="#" class="hero__slide hero__slide--dark is-active" style="background-image:url('img/heroimg_1.jpg')">
+      <div class="hero__caption">
+        <span class="hero__badge hero__badge--placeholder" aria-hidden="true">NEW</span>
+        <p class="hero__eyebrow">COVER STAIN PERFECTING FOUNDATION</p>
+        <h2 class="hero__headline">필터를 씌운 듯<br>매끈한 피부 표현</h2>
+        <span class="hero__cta">제품 보러가기</span>
+      </div>
+    </a>
+    <a href="#" class="hero__slide hero__slide--dark" style="background-image:url('img/heroimg_2.jpg')">
+      <div class="hero__caption">
+        <span class="hero__badge hero__badge--placeholder" aria-hidden="true">NEW</span>
+        <p class="hero__eyebrow">VDL LIPSTAIN GLOW TINT</p>
+        <h2 class="hero__headline">선명한 컬러에<br>가볍게 더해지는 글로우</h2>
+        <span class="hero__cta">제품 보러가기</span>
+      </div>
+    </a>
+    <a href="#" class="hero__slide" style="background-image:url('img/heroimg_3.jpg')">
+      <div class="hero__caption">
+        <span class="hero__badge">NEW</span>
+        <p class="hero__eyebrow">MOMO PEACH CHEEK STAIN BLUSHER</p>
+        <h2 class="hero__headline">복숭아처럼 사랑스러운<br>피치 컬러</h2>
+        <span class="hero__cta">제품 보러가기</span>
+      </div>
+    </a>
+  </div>
+  <div class="hero__pagination">
+    <button type="button" class="hero__dot is-active" aria-label="1번 슬라이드로 이동"></button>
+    <button type="button" class="hero__dot" aria-label="2번 슬라이드로 이동"></button>
+    <button type="button" class="hero__dot" aria-label="3번 슬라이드로 이동"></button>
+  </div>
+</section>
+
+<section class="best">
+  <div class="container">
+    <h2 class="best__title">VDL BEST</h2>
+    <div class="best__slider">
+      <div class="best__viewport">
+        <div class="best__track">
+          <div class="best__page">
+            <article class="best__item">
+              <a href="#" class="best__thumb"><img src="img/vdlbest_1.jpg" alt="VDL 커버스테인 퍼펙팅 쿠션" loading="lazy"></a>
+              <p class="best__name">VDL 커버스테인 퍼펙팅 쿠션</p>
+              <p class="best__price">36,000원</p>
+              <div class="best__actions">
+                <button type="button" class="best__action best__action--wish" aria-label="찜하기" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 20.2s-7.6-4.6-9.9-9.1C.5 7.7 2 4.3 5.4 3.6c2-.4 4 .5 5.1 2.3C11.6 4.1 13.6 3.2 15.6 3.6c3.4.7 4.9 4.1 3.3 7.5C16.6 15.6 12 20.2 12 20.2z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="best__action best__action--cart" aria-label="장바구니 담기">
+                  <span>ADD TO BAG</span>
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </article>
+            <article class="best__item">
+              <a href="#" class="best__thumb"><img src="img/vdlbest_2.jpg" alt="VDL 톤스테인 컬러코렉팅 프라이머" loading="lazy"></a>
+              <p class="best__name">VDL 톤스테인 컬러코렉팅 프라이머</p>
+              <p class="best__price">26,000원</p>
+              <div class="best__actions">
+                <button type="button" class="best__action best__action--wish" aria-label="찜하기" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 20.2s-7.6-4.6-9.9-9.1C.5 7.7 2 4.3 5.4 3.6c2-.4 4 .5 5.1 2.3C11.6 4.1 13.6 3.2 15.6 3.6c3.4.7 4.9 4.1 3.3 7.5C16.6 15.6 12 20.2 12 20.2z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="best__action best__action--cart" aria-label="장바구니 담기">
+                  <span>ADD TO BAG</span>
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </article>
+            <article class="best__item">
+              <a href="#" class="best__thumb"><img src="img/vdlbest_3.jpg" alt="치크스테인 블러셔 밤" loading="lazy"></a>
+              <p class="best__name">치크스테인 블러셔 밤</p>
+              <p class="best__price">23,000원</p>
+              <div class="best__actions">
+                <button type="button" class="best__action best__action--wish" aria-label="찜하기" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 20.2s-7.6-4.6-9.9-9.1C.5 7.7 2 4.3 5.4 3.6c2-.4 4 .5 5.1 2.3C11.6 4.1 13.6 3.2 15.6 3.6c3.4.7 4.9 4.1 3.3 7.5C16.6 15.6 12 20.2 12 20.2z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="best__action best__action--cart" aria-label="장바구니 담기">
+                  <span>ADD TO BAG</span>
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="best__page">
+            <article class="best__item">
+              <a href="#" class="best__thumb"><img src="img/vdlbest_4.jpg" alt="VDL 커버스테인 퍼펙팅 파운데이션" loading="lazy"></a>
+              <p class="best__name">VDL 커버스테인 퍼펙팅 파운데이션</p>
+              <p class="best__price">32,000원</p>
+              <div class="best__actions">
+                <button type="button" class="best__action best__action--wish" aria-label="찜하기" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 20.2s-7.6-4.6-9.9-9.1C.5 7.7 2 4.3 5.4 3.6c2-.4 4 .5 5.1 2.3C11.6 4.1 13.6 3.2 15.6 3.6c3.4.7 4.9 4.1 3.3 7.5C16.6 15.6 12 20.2 12 20.2z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="best__action best__action--cart" aria-label="장바구니 담기">
+                  <span>ADD TO BAG</span>
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </article>
+            <article class="best__item">
+              <a href="#" class="best__thumb"><img src="img/vdlbest_5.jpg" alt="VDL 치크스테인 리퀴드 블러셔" loading="lazy"></a>
+              <p class="best__name">VDL 치크스테인 리퀴드 블러셔</p>
+              <p class="best__price">18,000원</p>
+              <div class="best__actions">
+                <button type="button" class="best__action best__action--wish" aria-label="찜하기" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 20.2s-7.6-4.6-9.9-9.1C.5 7.7 2 4.3 5.4 3.6c2-.4 4 .5 5.1 2.3C11.6 4.1 13.6 3.2 15.6 3.6c3.4.7 4.9 4.1 3.3 7.5C16.6 15.6 12 20.2 12 20.2z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="best__action best__action--cart" aria-label="장바구니 담기">
+                  <span>ADD TO BAG</span>
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </article>
+            <article class="best__item">
+              <a href="#" class="best__thumb"><img src="img/vdlbest_6.jpg" alt="VDL 로즈포어 프렙 베이스" loading="lazy"></a>
+              <p class="best__name">VDL 로즈포어 프렙 베이스</p>
+              <p class="best__price">28,000원</p>
+              <div class="best__actions">
+                <button type="button" class="best__action best__action--wish" aria-label="찜하기" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 20.2s-7.6-4.6-9.9-9.1C.5 7.7 2 4.3 5.4 3.6c2-.4 4 .5 5.1 2.3C11.6 4.1 13.6 3.2 15.6 3.6c3.4.7 4.9 4.1 3.3 7.5C16.6 15.6 12 20.2 12 20.2z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="best__action best__action--cart" aria-label="장바구니 담기">
+                  <span>ADD TO BAG</span>
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="best__pagination">
+      <button type="button" class="best__dot is-active" aria-label="1번째 상품 그룹으로 이동"></button>
+      <button type="button" class="best__dot" aria-label="2번째 상품 그룹으로 이동"></button>
+    </div>
+  </div>
+</section>
+
+<section class="fit">
+  <a href="#" class="fit__bg" style="background-image:url('img/findyourfit img.jpg')">
+    <div class="fit__content">
+      <h2 class="fit__title">FIND YOUR FIT</h2>
+      <p class="fit__desc">당신의 피부에 꼭 맞는 메이크업 핏감을 느껴보세요.</p>
+      <span class="fit__cta">TAKE THE QUIZ</span>
+    </div>
+  </a>
+</section>
+
+<section class="new">
+  <div class="container">
+    <h2 class="new__title">NEW ARRIVALS</h2>
+    <div class="new__grid">
+      <a href="#" class="new__item new__item--large">
+        <img src="img/vdl new left img.jpg" alt="VDL 러블리 세팅 파우더" loading="lazy">
+        <div class="new__info">
+          <p class="new__name">VDL 러블리 세팅 파우더</p>
+          <p class="new__price">27,000원</p>
+        </div>
+      </a>
+      <a href="#" class="new__item">
+        <img src="img/vdl new right top img.jpg" alt="VDL 아이스컬프 섀도우 팔레트" loading="lazy">
+        <div class="new__info">
+          <p class="new__name">VDL 아이스컬프 섀도우 팔레트</p>
+          <p class="new__price">24,000원</p>
+        </div>
+      </a>
+      <a href="#" class="new__item">
+        <img src="img/vdl new right bottom img.jpg" alt="VDL 립스테인 글로우 틴트" loading="lazy">
+        <div class="new__info">
+          <p class="new__name">VDL 립스테인 글로우 틴트</p>
+          <p class="new__price">16,000원</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="banners">
+  <div class="banners__grid">
+    <a href="#" class="banners__item"><img src="img/kakaogift.jpg" alt="카카오 선물하기 - 마음을 전하는 가장 쉬운 방법" loading="lazy"></a>
+    <a href="#" class="banners__item"><img src="img/membership.jpg" alt="MEMBERSHIP BENEFIT - VDL 신규 회원 할인 혜택" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="insta">
+  <div class="insta__grid">
+    <a href="#" class="insta__item insta__item--model">
+      <img src="img/instagram left model.jpg" alt="VDL 인스타그램" loading="lazy">
+    </a>
+    <div class="insta__col">
+      <div class="insta__collage">
+        <a href="#" class="insta__item insta__item--cushion"><img src="img/instagram cushion.jpg" alt="VDL 인스타그램" loading="lazy"></a>
+        <a href="#" class="insta__item insta__item--cheek"><img src="img/instagram cheek.jpg" alt="VDL 인스타그램" loading="lazy"></a>
+      </div>
+      <a href="#" class="insta__follow">
+        <p class="insta__label"><span class="insta__script">follow</span> Our Instagram</p>
+        <p class="insta__handle">@vdl_cosmetics</p>
+      </a>
+    </div>
+    <a href="#" class="insta__item insta__item--balm">
+      <img src="img/instagram balm.jpg" alt="VDL 인스타그램" loading="lazy">
+    </a>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
